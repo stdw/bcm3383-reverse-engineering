@@ -1,0 +1,20 @@
+memset = 0x80522d7c;
+memcpy = 0x80004f30;
+malloc = 0x80596998;
+printf = 0x8052b178;
+socket = 0x80332fd0;
+bind = 0x800ae7bc;
+listen = 0x80412ed4;
+accept = 0x80413118;
+send = 0x80413240;
+recv = 0x804134bc;
+new_addr = 0x8013df20;
+addr_cpy = 0x800186b4;
+
+SECTIONS
+{
+  . = 0x80810000;
+  .text : { *(.text) }
+  .data : { *(.data) }
+  .rodata : { *(.rodata) }
+}
