@@ -1,2 +1,3 @@
-mips-linux-gcc main.c -o exe -Wl,--section-start=.text=0x80810000 -nostdlib -nodefaultlibs -nostartfiles
-dd if=exe skip=65536 bs=1 count=464 > bin
+mips-linux-gcc main.c -o exe -mips32 -T ./ldscript -fno-builtin -nostdlib -nodefaultlibs -nostartfiles
+mips-linux-objcopy -O binary -j .text -j .data -j .rodata exe bin
+ 
