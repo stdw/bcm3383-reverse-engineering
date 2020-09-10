@@ -2,6 +2,7 @@ memset = 0x80522d7c;
 memcpy = 0x80004f30;
 malloc = 0x80596998;
 printf = 0x8052b178;
+sleep_ms = 0x80411254;
 socket = 0x80332fd0;
 bind = 0x800ae7bc;
 listen = 0x80412ed4;
@@ -10,6 +11,15 @@ send = 0x80413240;
 recv = 0x804134bc;
 new_addr = 0x8013df20;
 addr_cpy = 0x800186b4;
+write_tuner_reg = 0x8002dd94;
+read_tuner_reg = 0x8002dfb4;
+write_lna_reg = 0x80405dd4;
+read_lna_reg = 0x80406044;
+get_channel_dpm = 0x80075734;
+sample_bandpower = 0x800816f8;
+set_channel_freq = 0x80073a98;
+timer_start = 0x8005d79c;
+timer_stop = 0x8005d81c;
 
 SECTIONS
 {

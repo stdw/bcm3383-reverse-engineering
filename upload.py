@@ -17,8 +17,7 @@ def main():
         authenticate(t)
 
     t.write(b'cd ..\r\n')
-    if b'Scanning' in get(t, b'>'):
-        stop_scan(t)
+    stop_scan(t)
 
     upload_file(t, FILE, DEST)
 
@@ -42,14 +41,11 @@ def authenticate(t):
 
 # delete task that floods output
 def stop_scan(t):
-    t.write(b'taskShow\r\n')
-    tasks = t.read_until(b'Scan Downstream')
-    tasklist = tasks.split(b'\r\n')
-    scantask = tasklist[-1].split(b' ')[0]
-    
-    t.write(b'taskDelete\r\n')
-    get(t, b'Enter Task ID')
-    t.write(scantask + b'\r\n')
+    t.write(b'cd cm_hal\r\n')
+    get(t, b'>')
+    t.write(b'scan_stop\r\n')
+    get(t, b'>')
+    t.write(b'cd ..\r\n')
     get(t, b'>')
 
 # write file to RAM
