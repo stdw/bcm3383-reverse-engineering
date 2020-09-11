@@ -98,11 +98,11 @@ void read_tuner_reg(int reg, void* buf, unsigned int size);
  */
 int get_channel_dpm(int channel);
 
-/* Sample the bandpower between start_freq and stop_freq using points samples
- * to the buffer buf.
- * Args _a and _b unknown, use 0 and 0 respectively.
+/* Sample the bandpower between start_freq and stop_freq using points points
+ * per FFT and writing the result to the buffer out.
+ * samples is the number of 8 byte samples to be written to buffer sample_buf
  */
-int sample_bandpower(unsigned int start_freq, unsigned int stop_freq, int points, int* out, int _a, int _b);
+int sample_bandpower(unsigned int start_freq, unsigned int stop_freq, int points, int* out, int samples, void* sample_buf);
 
 /* Set the given channel to the given freqency in Hz.  
  * Arg _a unknown, use 0 or 1.
